@@ -73,7 +73,7 @@
 
 | 기능            | URL                           | Method  |
 |-----------------|-------------------------------|---------|
-| 재고 등록       | `/stocks`                     | `POST`  |
-| 재고 목록 조회  | `/stocks`                     | `GET`   |
-| 재고 상세 조회  | `/stocks/{stock_id}`          | `GET`   |
-| 재고 수정       | `/stocks`                     | `POST`  |
+| 재고 등록       | `/api/stocks`                     | `POST`  |
+| 재고 목록 조회  | `/api/stocks`                     | `GET`   |
+| 재고 상세 조회  | `/api/stocks/{stock_id}`          | `GET`   |
+| 재고 수정       | `/api/stocks`                     | `POST`  |
