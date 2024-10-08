@@ -34,11 +34,11 @@
 
 | 기능            | URL                           | Method  |
 |-----------------|-------------------------------|---------|
-| 상품 등록       | `/products`                    | `POST`  |
-| 상품 목록 조회  | `/products`                    | `GET`   |
-| 상품 상세 조회  | `/products/{product_id}`       | `GET`   |
-| 상품 수정       | `/products/{product_id}`       | `PUT`   |
-| 상품 삭제       | `/products/{product_id}`       | `DELETE`|
+| 상품 등록       | `/api/products`                    | `POST`  |
+| 상품 목록 조회  | `/api/products`                    | `GET`   |
+| 상품 상세 조회  | `/api/products/{product_id}`       | `GET`   |
+| 상품 수정       | `/api/products/{product_id}`       | `PUT`   |
+| 상품 삭제       | `/api/products/{product_id}`       | `DELETE`|
 
 ---
 
@@ -47,11 +47,11 @@
 
 | 기능            | URL                               | Method  |
 |-----------------|-----------------------------------|---------|
-| 분류 등록       | `/categories`                     | `POST`  |
-| 분류 목록 조회  | `/categories`                     | `GET`   |
-| 분류 상세 조회  | `/categories/{category_id}`       | `GET`   |
-| 분류 수정       | `/categories/{category_id}`       | `PUT`   |
-| 분류 비활성화   | `/categories/{category_id}/disable`| `PATCH` |
+| 분류 등록       | `/api/categories`                     | `POST`  |
+| 분류 목록 조회  | `/api/categories`                     | `GET`   |
+| 분류 상세 조회  | `/api/categories/{category_id}`       | `GET`   |
+| 분류 수정       | `/api/categories/{category_id}`       | `PUT`   |
+| 분류 비활성화   | `/api/categories/{category_id}/disable`| `PATCH` |
 
 ---
 
@@ -60,11 +60,11 @@
 
 | 기능            | URL                           | Method  |
 |-----------------|-------------------------------|---------|
-| 브랜드 등록     | `/brands`                     | `POST`  |
-| 브랜드 목록 조회| `/brands`                     | `GET`   |
-| 브랜드 상세 조회| `/brands/{brand_id}`          | `GET`   |
-| 브랜드 수정     | `/brands/{brand_id}`          | `PUT`   |
-| 브랜드 비활성화 | `/brands/{brand_id}/disable`  | `PATCH` |
+| 브랜드 등록     | `/api/brands`                     | `POST`  |
+| 브랜드 목록 조회| `/api/brands`                     | `GET`   |
+| 브랜드 상세 조회| `/api/brands/{brand_id}`          | `GET`   |
+| 브랜드 수정     | `/api/brands/{brand_id}`          | `PUT`   |
+| 브랜드 비활성화 | `/api/brands/{brand_id}/disable`  | `PATCH` |
 
 ---
 
