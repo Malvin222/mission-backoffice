@@ -16,11 +16,11 @@ class Product(
 
     var productName: String = productName
 
-    @ManyToOne(targetEntity = Category::class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Category::class, fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "category_id")
     var category: Category? = null
 
-    @ManyToOne(targetEntity = Brand::class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Brand::class, fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "brand_id")
     var brand: Brand? = null
 
