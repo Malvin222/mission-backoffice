@@ -27,46 +27,32 @@ class DataInitializer(
     fun initializeData() {
         logger.debug("스프링이 실행되었습니다. 데이터를 초기화합니다.")
 
-        // 카테고리 저장
+        // 카테고리
 
-        val categories = mutableListOf<Category>(
-            Category(categoryName = "음식", useYn = true),
-            Category(categoryName = "음료", useYn = true),
-            Category(categoryName = "제과", useYn = true)
-        )
-        val foodCategory = categories.first { it.categoryName == "음식" }
-        val waterCategory = categories.first { it.categoryName == "음료" }
-        val bakeryCategory = categories.first { it.categoryName == "제과" }
+        val foodCategory = Category(categoryName = "음식", useYn = "Y")
+        val waterCategory = Category(categoryName = "음료", useYn = "Y")
+        val bakeryCategory = Category(categoryName = "제과", useYn = "Y")
 
-        categoryRepository.saveAll(categories)
-        logger.debug("카테고리 저장완료")
 
-        // 브랜드 저장
-        val brands = mutableListOf<Brand>(
-            Brand(brandName = "삼양", useYn = true),
-            Brand(brandName = "롯데", useYn = true),
-            Brand(brandName = "풀무원", useYn = true)
-        )
-        val samyang = brands.first { it.brandName == "삼양" }
-        val lotte = brands.first { it.brandName == "롯데" }
-        val pulmuone = brands.first { it.brandName == "풀무원" }
+        // 브랜드
+        val samyang = Brand(brandName = "삼양", useYn = "Y")
+        val lotte = Brand(brandName = "롯데", useYn = "Y")
+        val pulmuone = Brand(brandName = "풀무원", useYn = "Y")
 
-        brandRepository.saveAll(brands)
-        logger.debug("브랜드 저장완료")
 
         // 제품 저장
         val product1 = Product(
             productName = "맛있는우유",
-            taxYn = true,
-            useYn = true
+            taxYn = "Y",
+            useYn = "Y"
         )
         product1.addCategory(waterCategory)
         product1.addBrand(samyang)
 
         val product2 = Product(
             productName = "맛있는 과자",
-            taxYn = true,
-            useYn = true
+            taxYn = "Y",
+            useYn = "Y"
         )
         product2.addCategory(foodCategory)
         product2.addBrand(lotte)
@@ -74,8 +60,8 @@ class DataInitializer(
 
         val product3 = Product(
             productName = "맛있는 빵",
-            taxYn = true,
-            useYn = true
+            taxYn = "Y",
+            useYn = "Y"
         )
         product3.addCategory(bakeryCategory)
         product3.addBrand(pulmuone)

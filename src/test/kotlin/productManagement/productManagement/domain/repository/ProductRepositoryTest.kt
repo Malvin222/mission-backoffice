@@ -1,10 +1,8 @@
 package productManagement.productManagement.domain.repository
 
-import org.assertj.core.api.Assertions
-import org.assertj.core.api.Assertions.*
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.TestInstance
-import org.junit.platform.commons.logging.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import productManagement.productManagement.domain.entity.Brand
@@ -21,17 +19,17 @@ class ProductRepositoryTest(
     private fun createProduct(n: Int): Product {
         val product = Product(
             productName = "product ${n}",
-            taxYn = true,
-            useYn = true
+            taxYn = "Y",
+            useYn = "Y"
         )
 
         val brands = mutableListOf<Brand>()
         for (i in 1..n) {
-            val brand = Brand(brandName = "brand ${i}", useYn = true)
+            val brand = Brand(brandName = "brand ${i}", useYn = "Y")
             brands.add(brand)
         }
 
-        product.addBrand(brands[n-1])
+        product.addBrand(brands[n - 1])
         return product
     }
 
@@ -44,7 +42,7 @@ class ProductRepositoryTest(
 
         println("----- 테스트 데이터 초기화 시작-----")
         val products = mutableListOf<Product>()
-        for(i in 1.. DATA_SIZE){
+        for (i in 1..DATA_SIZE) {
             val product = createProduct(i)
             products.add(product)
         }
@@ -53,7 +51,7 @@ class ProductRepositoryTest(
     }
 
     @Test
-    fun testFindAll(){
+    fun testFindAll() {
         println("----- findAll 테스트 시작 -----")
         val products = productRepository.findAll()
         assertThat(products).hasSize(DATA_SIZE)
@@ -63,9 +61,9 @@ class ProductRepositoryTest(
     }
 
     @Test
-    fun testFindAllByUseYn(){
+    fun testFindAllByUseYn() {
         println("----- findAllByUseYn 테스트 시작 -----")
-        val products = productRepository.findAllByUseYn(true)
+        val products = productRepository.findAllByUseYn("Y")
         assertThat(products).hasSize(DATA_SIZE)
         println("products.size: ${products.size}")
 

@@ -5,5 +5,5 @@ import productManagement.productManagement.domain.entity.Brand
 
 interface BrandRepository : JpaRepository<Brand, Long> {
 
-    fun findAllByUseYn(useYn: Boolean): List<Brand>
+    fun findAllByUseYn(useYn: String): List<Brand>
 }

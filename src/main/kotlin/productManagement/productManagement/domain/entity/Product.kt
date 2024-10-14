@@ -6,8 +6,8 @@ import java.time.LocalDateTime
 @Entity
 class Product(
     productName: String,
-    taxYn: Boolean,
-    useYn: Boolean,
+    taxYn: String,
+    useYn: String,
 ) : BaseEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,16 +16,16 @@ class Product(
 
     var productName: String = productName
 
-    @ManyToOne(targetEntity = Category::class, fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    @ManyToOne(targetEntity = Category::class, fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST])
     @JoinColumn(name = "category_id")
     var category: Category? = null
 
-    @ManyToOne(targetEntity = Brand::class, fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    @ManyToOne(targetEntity = Brand::class, fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST])
     @JoinColumn(name = "brand_id")
     var brand: Brand? = null
 
-    var taxYn: Boolean = taxYn
-    var useYn: Boolean = useYn
+    var taxYn: String = taxYn
+    var useYn: String = useYn
 
     var createDate: LocalDateTime = createDateTime
 
