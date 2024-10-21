@@ -6,6 +6,7 @@ import org.junit.jupiter.api.TestInstance
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import productManagement.productManagement.domain.entity.Brand
+import productManagement.productManagement.domain.entity.Category
 import productManagement.productManagement.domain.entity.Product
 import kotlin.test.Test
 
@@ -20,7 +21,16 @@ class ProductRepositoryTest(
         val product = Product(
             productName = "product ${n}",
             taxYn = "Y",
-            useYn = "Y"
+            useYn = "Y",
+            id = 1,
+            brand = Brand(
+                brandName = "samyang",
+                useYn = "Y"
+            ),
+            category = Category(
+                categoryName = "food",
+                useYn = "Y"
+            )
         )
 
         val brands = mutableListOf<Brand>()

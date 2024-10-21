@@ -16,4 +16,11 @@ class Category(
     var categoryName: String = categoryName
     var useYn: String = useYn
 
+    fun disable() {
+        this.useYn = "N"
+    }
+
+    fun update(categoryName: String) {
+        this.categoryName = categoryName
+    }
 }

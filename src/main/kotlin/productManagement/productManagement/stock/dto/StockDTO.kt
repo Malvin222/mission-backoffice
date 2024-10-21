@@ -1,10 +1,12 @@
-package productManagement.productManagement.presentation.dto
+package productManagement.productManagement.stock.dto
 
+import productManagement.productManagement.domain.entity.Brand
 import productManagement.productManagement.domain.entity.Stock
+import productManagement.productManagement.product.dto.ProductDTO
 import java.time.LocalDateTime
 
 data class StockDTO(
-    val stockCount: Int?,
+    var stockCount: Int?,
     val receivingCount: Int?,
     val receivingPrice: Int?,
     val product: ProductDTO,
@@ -17,4 +19,12 @@ data class StockDTO(
         product = stock.product?.let { ProductDTO(it) } ?: throw IllegalArgumentException("Product cannot be null"),
         receivingDate = stock.createDateTime
     )
+
+    fun toEntity(): Stock {
+        return Stock(
+            stockCount = this.stockCount,
+            receivingCount = this.receivingCount,
+            receivingPrice = this.receivingPrice
+        )
+    }
 }

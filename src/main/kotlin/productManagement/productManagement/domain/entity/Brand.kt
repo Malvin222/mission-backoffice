@@ -16,4 +16,11 @@ class Brand(
     var brandName: String = brandName
     var useYn: String = useYn
 
+    fun disable() {
+        this.useYn = "N"
+    }
+
+    fun update(brandName: String) {
+        this.brandName = brandName
+    }
 }

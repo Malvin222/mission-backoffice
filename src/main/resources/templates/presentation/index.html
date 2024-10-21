@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리 대시보드</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <script th:src="@{/script.js}" defer></script>
+</head>
+<body>
+<div class="sidebar">
+    <h2>관리 대시보드</h2>
+    <ul>
+        <li><a href="#" th:onclick="'showSection(''brand'')'">브랜드 조회</a></li>
+        <li><a href="#" th:onclick="'showSection(''category'')'">카테고리 조회</a></li>
+        <li><a href="#" th:onclick="'showSection(''product'')'">제품 조회</a></li>
+        <li><a href="#" th:onclick="'showSection(''stock'')'">재고 조회</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <div id="brand" class="section hidden">
+        <h3>브랜드 조회</h3>
+        <ul id="brand-list">
+            <li th:each="brand : ${brands}" th:text="${brand.brandName}"></li>
+        </ul>
+    </div>
+
+    <div id="category" class="section hidden">
+        <h3>카테고리 조회</h3>
+        <ul id="category-list">
+            <li th:each="category : ${categories}" th:text="${category.categoryName}"></li>
+        </ul>
+    </div>
+
+    <div id="product" class="section hidden">
+        <h3>제품 조회</h3>
+        <ul id="product-list">
+            <li th:each="product : ${products}" th:text="${product.productName}"></li>
+        </ul>
+    </div>
+
+    <div id="stock" class="section hidden">
+        <h3>재고 조회</h3>
+        <ul id="stock-list">
+            <li th:each="stock : ${stocks}" th:text="'제품명:'+${stock.product.productName}+' 재고 수량: ' + ${stock.stockCount}"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

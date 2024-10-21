@@ -44,7 +44,10 @@ class DataInitializer(
         val product1 = Product(
             productName = "맛있는우유",
             taxYn = "Y",
-            useYn = "Y"
+            useYn = "Y",
+            id = 1,
+            brand = samyang,
+            category = foodCategory
         )
         product1.addCategory(waterCategory)
         product1.addBrand(samyang)
@@ -52,7 +55,10 @@ class DataInitializer(
         val product2 = Product(
             productName = "맛있는 과자",
             taxYn = "Y",
-            useYn = "Y"
+            useYn = "Y",
+            id = 2,
+            brand = lotte,
+            category = waterCategory
         )
         product2.addCategory(foodCategory)
         product2.addBrand(lotte)
@@ -61,10 +67,11 @@ class DataInitializer(
         val product3 = Product(
             productName = "맛있는 빵",
             taxYn = "Y",
-            useYn = "Y"
+            useYn = "Y",
+            id = 3,
+            brand = pulmuone,
+            category = bakeryCategory
         )
-        product3.addCategory(bakeryCategory)
-        product3.addBrand(pulmuone)
 
         productRepository.saveAll(mutableListOf(product1, product2, product3))
 
@@ -75,7 +82,6 @@ class DataInitializer(
             stockCount = 0
         )
         stock1.addProduct(product1)
-        stock1.updateStockCount(5)
 
         stockRepository.save(stock1)
         logger.debug("재고 저장 완료")

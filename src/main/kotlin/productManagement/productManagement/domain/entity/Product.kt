@@ -8,6 +8,9 @@ class Product(
     productName: String,
     taxYn: String,
     useYn: String,
+    id: Long?,
+    brand: Brand?,
+    category: Category?,
 ) : BaseEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
